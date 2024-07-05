@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation de Billets</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Réservation de Billets en Ligne</h1>
+        <form id="booking-form">
+            <label for="departure">Ville de départ:</label>
+            <select id="departure" name="departure">
+                <option value="Kinshasa">Kinshasa</option>
+                <option value="Lubumbashi">Lubumbashi</option>
+                <option value="Goma">Goma</option>
+                <option value="Kisangani">Kisangani</option>
+                <option value="Béni">Béni</option>
+                <option value="Bunia">Bunia</option>
+                <option value="Isiro">Isiro</option>
+                <option value="Bukavu">Bukavu</option>
+                <option value="Butembo">Butembo</option>
+                <!-- Ajoutez plus de villes de la RDC -->
+            </select>
+
+            <label for="destination">Ville de destination:</label>
+            <select id="destination" name="destination">
+                <option value="Kampala">Kampala</option>
+                <option value="Nairobi">Nairobi</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Chengdu">Chengdu</option>
+                <option value="Canada">Canada</option>
+                <option value="Kindia">Kindia</option>
+                <!-- Ajoutez plus de villes d'Afrique et du monde -->
+            </select>
+
+            <label for="date">Date de départ:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="price">Prix:</label>
+            <input type="text" id="price" name="price" readonly>
+
+            <button type="button" id="calculate-price">Calculer le prix</button>
+
+            <h2>Moyens de paiement</h2>
+            <div id="payment-buttons-container">
+                <div id="paypal-button-container"></div>
+                <button type="button" id="mpesa-button">Payer avec M-Pesa</button>
+                <button type="button" id="visa-button">Payer avec Visa</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("YOUR_USER_ID");
+        })();
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
